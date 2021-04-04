@@ -1,3 +1,4 @@
+//DATA//
 const imgs = [
     {
       preview:
@@ -63,17 +64,23 @@ const imgs = [
       description: 'Lighthouse Coast Sea',
     },
   ];
+//Variables
   const galleryList = document.querySelector('.js-gallery');
   const backDrop = document.querySelector('.lightbox');
   const backDropImg = document.querySelector('.lightbox__image');
-  const modalCloseBtn = document.querySelector('button[data-action="close-lightbox"]');
-  const backDropOvevLay = document.querySelector('.lightbox__overlay');
+  const modalCloseBtn = document.querySelector(
+    'button[data-action="close-lightbox"]'
+    );
+  const backDropOverLay = document.querySelector('.lightbox__overlay');
   const galleryListMarkup = createCardsMarkup (imgs);
+
+//Listeners//
   galleryList.insertAdjacentHTML('beforeend', galleryListMarkup)
-  galleryList.addEventListener('click', ongalleryListclick, );
+  galleryList.addEventListener('click', onGalleryListClick, );
   modalCloseBtn.addEventListener('click', onBtnClose)
-  backDropOvevLay.addEventListener('click', onBackDropClick)
-  function ongalleryListclick(evt){
+  backDropOverLay.addEventListener('click', onBackDropClick)
+//Function//
+  function onGalleryListClick(evt){
     if(evt.target.nodeName !=='IMG'){
       return
     }
